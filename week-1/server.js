@@ -129,6 +129,14 @@ app.delete("/tasks/:id", (req, res) => {
     });
 });
 
+// Health Check API
+app.get("/health", (req, res) => {
+    res.status(200).json({
+        status: "OK",
+        message: "CRUD Backend Server is running"
+    });
+});
+
 // Start server
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
